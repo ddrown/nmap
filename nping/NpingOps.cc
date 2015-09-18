@@ -2728,8 +2728,9 @@ bool NpingOps::canDoIPv6ThroughSocket(){
     this->issetSourceMAC() ||
     this->issetHopLimit() ||
     this->issetTrafficClass() ||
-    this->issetFlowLabel() ||
-    this->issetIPv6SourceAddress()
+    this->issetFlowLabel() /* ||
+    this->issetIPv6SourceAddress() -- TODO: this is a hack to allow the user to set source address to fix BPF
+    */
   )
     return false;
   else
